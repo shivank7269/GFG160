@@ -14,10 +14,10 @@ public class FindElementMajority {
                 count2++;
             }else if(count1==0){
                 candidate1=nums[i];
-                count1++;
+                count1=1;
             }else if(count2==0){
                 candidate2=nums[i];
-                count2++;
+                count2=1;
             }else{
                 count1--;
                 count2--;
@@ -29,16 +29,21 @@ public class FindElementMajority {
             if(i==candidate1) count1++;
             else if(i==candidate2) count2++;
         }
-        if(count1>majorityVote && count1>count2){
+        if(count1>majorityVote){
             res.add(candidate1);
-        }else if(count2>majorityVote){
+        }if(count2>majorityVote){
             res.add(candidate2);
+        }
+        if(res.size()==2&&res.get(0)>res.get(1)){
+            int temp = res.get(0);
+            res.set(0,res.get(1));
+            res.set(1,temp);
         }
         return res;
 
     }
     public static void main(String[] args) {
-        int[] nums = {3, 3, 4, 2, 4, 4, 2, 4, 4};
+        int[] nums = {-5,1,-5};
         FindElementMajority solution = new FindElementMajority();
         List<Integer> majorityElements = solution.findMajority(nums);
 

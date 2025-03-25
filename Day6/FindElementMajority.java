@@ -14,8 +14,10 @@ public class FindElementMajority {
                 count2++;
             }else if(count1==0){
                 candidate1=nums[i];
+                count1++;
             }else if(count2==0){
                 candidate2=nums[i];
+                count2++;
             }else{
                 count1--;
                 count2--;

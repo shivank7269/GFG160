@@ -1,5 +1,5 @@
 package Day4;
-import java.util.Arrays;
+
 public class RotateArray {
     static int[] rotateArr(int arr[], int d) {
         int n = arr.length;

@@ -2,18 +2,11 @@ package Day7;
 
 public class StockBuyAndSell {
     public int maximumProfit(int prices[]) {
-        int maxprofit =0;
-        int n=prices.length;
-        int buy=0,sell=0;
-        for(int i=1;i<n;i++){
-            if(prices[i-1]>prices[i]){
-                maxprofit+=prices[i-1]-prices[buy];
-                buy=i;
-            }
+        int max=0;
+        for(int i=1;i<prices.length;i++){
+            if(prices[i]>prices[i-1]) max+=prices[i]-prices[i-1];
         }
-        sell=n-1;
-        maxprofit+=prices[sell]-prices[buy];
-        return maxprofit;
+        return max;
     }
 
     public static void main(String[] args) {

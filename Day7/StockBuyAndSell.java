@@ -15,4 +15,11 @@ public class StockBuyAndSell {
         maxprofit+=prices[sell]-prices[buy];
         return maxprofit;
     }
+
+    public static void main(String[] args) {
+        StockBuyAndSell sbs = new StockBuyAndSell();
+        int[] arr={1,2,3,4,5,6,7};
+        int maximumProfit=sbs.maximumProfit(arr);
+        System.out.println("Maximum profit will be :"+maximumProfit);
+    }
 }
